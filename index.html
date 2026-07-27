@@ -16,11 +16,11 @@
             color: #ffffff;
             overflow-x: hidden;
         }
-        /* Ticker Patti */
+        /* Moving Ticker */
         .ticker-container {
             background: #1e293b;
             color: #38bdf8;
-            padding: 10px 0;
+            padding: 12px 0;
             font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
@@ -30,7 +30,7 @@
         .ticker-text {
             display: inline-block;
             padding-left: 100%;
-            animation: ticker 25s linear infinite;
+            animation: ticker 30s linear infinite;
         }
         @keyframes ticker {
             0% { transform: translate3d(0, 0, 0); }
@@ -42,18 +42,18 @@
             padding: 50px 20px;
             background: linear-gradient(135deg, #1e293b, #0f172a);
             border-bottom: 2px solid #334155;
-            animation: fadeIn 1.5s ease-in-out;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #38bdf8;
             margin-bottom: 10px;
         }
         header p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #94a3b8;
+            font-weight: 500;
         }
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 900px;
             margin: 30px auto;
@@ -61,171 +61,191 @@
         }
         .card {
             background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.4);
             margin-bottom: 30px;
             border: 1px solid #334155;
             transition: transform 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
         .card h2 {
             color: #38bdf8;
             margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             border-bottom: 1px solid #334155;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
         .content-text {
-            line-height: 1.6;
+            line-height: 1.7;
             color: #cbd5e1;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
-        /* Form Styles */
+        /* Grid Layout for Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .info-box {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+        .info-box h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        /* Form */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #38bdf8;
             font-weight: 600;
         }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 8px;
             border: 1px solid #475569;
             background: #0f172a;
             color: #fff;
+            font-size: 1rem;
         }
         .btn {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background: #38bdf8;
             color: #0f172a;
             font-weight: bold;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 1rem;
             transition: background 0.3s;
         }
         .btn:hover {
             background: #0ea5e9;
         }
-        /* Photo Gallery Grid */
+        /* Photo Gallery */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            gap: 20px;
             margin-top: 15px;
         }
         .photo-box {
             background: #0f172a;
             border: 1px solid #334155;
-            border-radius: 8px;
-            height: 180px;
+            border-radius: 10px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #64748b;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-align: center;
-            padding: 10px;
-        }
-        /* Media Section */
-        .media-box {
-            text-align: center;
-            margin-top: 15px;
+            padding: 15px;
         }
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             color: #64748b;
             background: #0f172a;
             border-top: 1px solid #1e293b;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Moving Ticker Patti -->
+    <!-- Ticker Patti -->
     <div class="ticker-container">
         <div class="ticker-text">
-            🚀 Welcome to Official Portal | Strategic Coordinator & Leadership Management | Updated Daily With Latest Insights & Updates
+            🚀 Official Portal | Strategic Coordinator for Party Leaders, Ministers & Chairmen | Managing High-Level Teams & Digital Narratives | 100% Accuracy & Transparency
         </div>
     </div>
 
     <!-- Header -->
     <header>
         <h1>Abhishek Gaur</h1>
-        <p>Strategic Coordinator | Leadership & Digital Narrative Management</p>
+        <p>Strategic Coordinator & Leadership Management Portal</p>
     </header>
 
-    <!-- Content Container -->
+    <!-- Main Container -->
     <div class="container">
         
-        <!-- About Section -->
+        <!-- About Profile -->
         <div class="card">
-            <h2>About Profile</h2>
+            <h2>Professional Profile</h2>
             <p class="content-text">
-                Managing high-level political coordination, strategic communication, leadership teams, and organizational frameworks with complete precision, transparency, and high-impact digital narratives.
+                Managing high-level political coordination for Party Leaders, Ministers, Chairmen, and Directors. Leading the entire team strategy, organizational workflows, and high-impact digital narratives with precision and complete data integrity.
             </p>
-        </div>
-
-        <!-- Photos Section -->
-        <div class="card">
-            <h2>Photo Gallery</h2>
-            <p style="color: #94a3b8; margin-bottom: 10px;">Yahan aapki official photos display hongi:</p>
-            <div class="photo-grid">
-                <div class="photo-box">Photo 1 Placeholder</div>
-                <div class="photo-box">Photo 2 Placeholder</div>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Location</h3>
+                    <p style="color: #94a3b8;">Dinanagar, Punjab, India</p>
+                </div>
+                <div class="info-box">
+                    <h3>Core Domain</h3>
+                    <p style="color: #94a3b8;">Strategic Leadership & Coordination</p>
+                </div>
             </div>
         </div>
 
-        <!-- Admit Card / Download Section -->
+        <!-- Photo Gallery -->
         <div class="card">
-            <h2>Admit Card & Documents</h2>
-            <p class="content-text" style="margin-bottom: 15px;">
-                Aapke zaroori documents, notification ya Admit Card yahan se download kiye ja sakte hain:
-            </p>
-            <a href="#" class="btn" style="text-decoration: none; display: inline-block;">📥 Download Admit Card / Document</a>
+            <h2>Photo Gallery</h2>
+            <p style="color: #94a3b8; margin-bottom: 10px;">Official snapshots and field updates:</p>
+            <div class="photo-grid">
+                <div class="photo-box">Official Photo / Event 1<br>(Image link update karein)</div>
+                <div class="photo-box">Official Photo / Event 2<br>(Image link update karein)</div>
+            </div>
         </div>
 
-        <!-- Form Section -->
+        <!-- Admit Card & Documents Section -->
         <div class="card">
-            <h2>Official Inquiry / Registration Form</h2>
-            <form onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+            <h2>Admit Card & Official Documents</h2>
+            <p class="content-text" style="margin-bottom: 20px;">
+                Aapke verified documents, passes ya Admit Card yahan se direct download kiye ja sakte hain:
+            </p>
+            <a href="#" class="btn" style="text-decoration: none; display: inline-block;">📥 Download Official Admit Card / Pass</a>
+        </div>
+
+        <!-- Inquiry & Registration Form -->
+        <div class="card">
+            <h2>Official Inquiry / Communication Form</h2>
+            <form onsubmit="event.preventDefault(); alert('Form successfully submitted!');">
                 <div class="form-group">
                     <label for="name">Aapka Naam:</label>
-                    <input type="text" id="name" placeholder="Naam likhein" required>
+                    <input type="text" id="name" placeholder="Apna pura naam likhein" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Mobile Number:</label>
-                    <input type="text" id="phone" placeholder="Mobile number likhein" required>
+                    <input type="text" id="phone" placeholder="Apna mobile number likhein" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Sandesh / Message:</label>
-                    <textarea id="message" rows="3" placeholder="Apna message likhein"></textarea>
+                    <label for="message">Sandesh / Details:</label>
+                    <textarea id="message" rows="4" placeholder="Apna message ya inquiry yahan likhein"></textarea>
                 </div>
-                <button type="submit" class="btn">Submit Form</button>
+                <button type="submit" class="btn">Submit Inquiry</button>
             </form>
         </div>
 
-        <!-- Media & Instagram Section -->
+        <!-- Media & Updates Section -->
         <div class="card">
-            <h2>Latest Media & Updates</h2>
-            <p style="color: #94a3b8; margin-bottom: 15px;">Instagram video / reels:</p>
-            <div class="media-box">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0; width:99.375%;"></blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </div>
+            <h2>Media & Press Updates</h2>
+            <p class="content-text">
+                Latest video coverages, statements, and social media media streams update here automatically.
+            </p>
         </div>
 
     </div>
