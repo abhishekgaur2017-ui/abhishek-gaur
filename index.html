@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Abhishek Gaur | Official Executive Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap" rel="stylesheet">
+    <!-- HTML2CANVAS Library for Direct HD Image Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-main: #060913;
+            --bg-card: rgba(18, 26, 44, 0.85);
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.12);
+            --gold: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Responsive Navigation Header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 5%;
+            background: rgba(6, 9, 19, 0.96);
+            backdrop-filter: blur(16px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-text span { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 6px;
+        }
+
+        .nav-link-item {
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-link-item:hover {
+            color: #ffffff;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid var(--accent-glow);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #fff;
+            padding: 5px;
+        }
+
+        /* Page Flow Sections */
+        .page-section {
+            display: block !important;
+            padding: 100px 5% 50px;
+            border-bottom: 1px solid var(--border);
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            min-height: 75vh;
+            width: 100%;
+        }
+
+        .hero-text { flex: 1.2; }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--accent-glow);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .status-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        .hero-title {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: #ffffff !important;
+        }
+
+        .hero-role {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #060913;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #060913;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .hero-image-wrapper {
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .hero-frame {
+            position: relative;
+            padding: 6px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            max-width: 100%;
+        }
+
+        .hero-frame img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 16px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Section Titles & Layout Grids */
+        .page-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .cards-grid, .gallery-grid, .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            width: 100%;
+        }
+
+        .custom-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 16px;
+            width: 100%;
+        }
+
+        .card-icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .custom-card h3 { font-size: 17px; margin-bottom: 10px; color: #ffffff; }
+        .custom-card p { font-size: 13.5px; color: var(--text-secondary); }
+
+        /* UN-CROPPED GALLERY CARDS */
+        .gallery-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: contain;
+            background: #090d1a;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .gallery-caption {
+            background: rgba(12, 18, 30, 0.95);
+            padding: 12px 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        .gallery-caption span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+            display: block;
+        }
+
+        /* NEWS CARDS STYLING */
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-grow: 1;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .platform-box { text-align: center; padding: 25px 18px; }
+        .platform-logo-frame {
+            width: 80px; height: 80px; margin: 0 auto 16px; border-radius: 50%;
+            background: #000; border: 2px solid var(--accent-glow); overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .platform-logo-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .platform-logo-frame i { font-size: 30px; color: var(--accent); }
+        .platform-links { margin-top: 16px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .platform-links a, .platform-links span {
+            padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
+            color: var(--accent); background: rgba(56, 189, 248, 0.1); text-decoration: none;
+        }
+
+        /* Form Styling */
+        .dgt-form-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px 20px;
+            max-width: 750px;
+            margin: 25px auto 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            width: 100%;
+        }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { font-size: 12.5px; font-weight: 600; color: var(--text-secondary); }
+        .form-control {
+            background: rgba(6, 9, 19, 0.8); border: 1px solid var(--border);
+            border-radius: 8px; padding: 10px 14px; color: #fff; font-size: 13.5px; outline: none;
+            width: 100%;
+        }
+
+        /* Modals System */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 200000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            color: #0f172a;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* WATERMARKED VIP ADMIT CARD DESIGN */
+        .admit-card-design {
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .admit-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            width: 220px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .admit-header { text-align: center; border-bottom: 2px dashed #cbd5e1; padding-bottom: 10px; margin-bottom: 10px; position: relative; z-index: 2; }
+        .admit-header h3 { color: #0284c7; font-size: 21px; font-weight: 800; }
+        .admit-header p { font-size: 11.5px; color: #64748b; }
+        
+        /* AUDITION SCHEDULE & VENUE BOX */
+        .schedule-badge {
+            background: #e0f2fe;
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.5;
+        }
+
+        .admit-body { display: flex; gap: 15px; align-items: center; margin-bottom: 12px; position: relative; z-index: 2; }
+        .admit-photo { width: 100px; height: 120px; border: 2px solid #cbd5e1; border-radius: 8px; object-fit: cover; background: #f1f5f9; }
+        .admit-details { font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+        
+        .barcode-box {
+            text-align: center;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .barcode-text {
+            font-family: 'Libre Barcode 128', cursive;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: 2px;
+            color: #0f172a;
+        }
+
+        .admit-footer-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+            margin-top: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reg-id-badge { background: #fef3c7; color: #d97706; padding: 4px 10px; font-weight: 800; border-radius: 6px; font-size: 12.5px; }
+
+        /* FLOATING AI ASSISTANT BUTTON */
+        .ai-fab {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            background: linear-gradient(135deg, #0284c7, #38bdf8) !important;
+            color: #ffffff !important;
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 24px !important;
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6) !important;
+            z-index: 9999999 !important;
+            cursor: pointer !important;
+            border: 2px solid #ffffff;
+        }
+
+        .ai-chat-box {
+            display: none;
+            position: fixed;
+            bottom: 85px;
+            right: 20px;
+            width: 320px;
+            max-width: 90vw;
+            background: #0f172a;
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            z-index: 9999999;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .ai-chat-header { background: #0284c7; color: #fff; padding: 12px 15px; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
+        .ai-chat-body { padding: 12px; height: 220px; overflow-y: auto; font-size: 12.5px; display: flex; flex-direction: column; gap: 8px; }
+        .ai-msg { background: rgba(56, 189, 248, 0.15); padding: 8px 10px; border-radius: 8px; color: #f8fafc; max-width: 88%; }
+        .user-msg { background: #1e293b; padding: 8px 10px; border-radius: 8px; color: #38bdf8; align-self: flex-end; max-width: 88%; }
+        .ai-chat-footer { padding: 10px; background: #060913; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+        .ai-quick-actions { display: flex; gap: 4px; flex-wrap: wrap; }
+        .quick-btn { background: rgba(56, 189, 248, 0.1); color: var(--accent); border: 1px solid rgba(56, 189, 248, 0.3); padding: 4px 8px; border-radius: 10px; font-size: 10.5px; cursor: pointer; }
+
+        /* Social Grid & Footer */
+        .social-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; width: 100%; }
+        .social-item {
+            display: flex; align-items: center; gap: 10px; padding: 14px 22px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            color: var(--text-primary); text-decoration: none; font-weight: 600; font-size: 13.5px; transition: 0.3s;
+        }
+        .social-item i { font-size: 20px; }
+        .insta i { color: #e1306c; } .fb i { color: #1877f2; } .linkedin i { color: #0a66c2; } .email i { color: #38bdf8; } .wa-btn i { color: #25d366; } .call-btn i { color: #f59e0b; }
+
+        footer { text-align: center; padding: 25px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 12.5px; }
+
+        /* Mobile Screen Media Query */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 58px;
+                left: 0;
+                width: 100%;
+                background: rgba(6, 9, 19, 0.98);
+                padding: 15px 20px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.mobile-open { display: flex; }
+            .hamburger { display: block; }
+            .hero-container { flex-direction: column; text-align: center; padding-top: 15px; }
+            .hero-title { font-size: 34px; }
+            .hero-role { font-size: 15px; }
+            .hero-desc { font-size: 13.5px; }
+            .btn-group { justify-content: center; }
+            .hero-frame img { max-width: 260px; }
+            .cards-grid, .gallery-grid, .news-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .admit-body { flex-direction: column; text-align: center; }
+            .page-header h2 { font-size: 24px; }
+            .social-item { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <a href="#home" class="logo-text">ABHISHEK <span>GAUR</span></a>
+        <div class="hamburger" onclick="toggleMobileNav()"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="navMenu">
+            <a href="#home" class="nav-link-item" onclick="closeNav()">Home</a>
+            <a href="#about" class="nav-link-item" onclick="closeNav()">About</a>
+            <a href="#safar" class="nav-link-item" onclick="closeNav()">Political Safar</a>
+            <a href="#news" class="nav-link-item" onclick="closeNav()"><i class="fas fa-newspaper" style="color:var(--accent);"></i> News & Media</a>
+            <a href="#platforms" class="nav-link-item" onclick="closeNav()">Media Ventures</a>
+            <a href="#dgt-register" class="nav-link-item" onclick="closeNav()"><i class="fas fa-star" style="color:#f59e0b;"></i> DGT Audition</a>
+            <a href="#honours" class="nav-link-item" onclick="closeNav()">Honours</a>
+            <a href="#family" class="nav-link-item" onclick="closeNav()">Family</a>
+            <a href="#contact" class="nav-link-item" onclick="closeNav()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- FLOATING AI ASSISTANT WIDGET BUTTON -->
+    <div class="ai-fab" onclick="toggleAiChat()" title="Chat with AI Assistant & Helpline">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- AI CHAT ASSISTANT POPUP -->
+    <div class="ai-chat-box" id="aiChatBox">
+        <div class="ai-chat-header">
+            <span><i class="fas fa-headset"></i> Abhishek Gaur AI Assistant</span>
+            <i class="fas fa-times" style="cursor:pointer;" onclick="toggleAiChat()"></i>
+        </div>
+        <div class="ai-chat-body" id="aiChatBody">
+            <div class="ai-msg">Namaste! Main Abhishek Gaur ka Digital AI Assistant hoon. Aapko kis baare mein jankari chahiye?</div>
+        </div>
+        <div class="ai-chat-footer">
+            <div class="ai-quick-actions">
+                <button class="quick-btn" onclick="sendQuickQuery('Who is Abhishek Gaur?')">About Profile</button>
+                <button class="quick-btn" onclick="sendQuickQuery('DGT Audition Form')">DGT Show</button>
+                <button class="quick-btn" onclick="sendQuickQuery('Helpline Number')">Helpline</button>
+            </div>
+            <a href="tel:08054228632" class="btn-main btn-gold" style="padding: 8px; font-size: 11.5px; justify-content: center; text-align:center;"><i class="fas fa-phone-alt"></i> Helpline: 080542 28632</a>
+            <a href="https://api.whatsapp.com/send?phone=919103579840&text=Hello%20Abhishek%20Ji" target="_blank" class="btn-main btn-accent" style="padding: 8px; font-size: 11.5px; justify-content: center; text-align:center;"><i class="fab fa-whatsapp"></i> WhatsApp Business Chat</a>
+        </div>
+    </div>
+
+    <!-- SECTION 1: HOME -->
+    <section id="home" class="page-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="status-badge"><div class="dot"></div> Strategic Coordinator & Media Specialist</div>
+                <h1 class="hero-title">Abhishek Gaur</h1>
+                <p class="hero-role">Coordinating Leadership | Digital Narrative | Media Operations</p>
+                <p class="hero-desc">Coordinating high-level operations with Party Leaders, Ministers, Chairmen & Directors. Managing digital narratives & media strategies across national platforms.</p>
+                <div class="btn-group">
+                    <a href="#safar" class="btn-main btn-accent">Explore Safar <i class="fas fa-arrow-down"></i></a>
+                    <a href="#dgt-register" class="btn-main btn-gold"><i class="fas fa-microphone"></i> DGT Audition Registration</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-frame">
+                    <img src="images/hero.png" alt="Abhishek Gaur" onerror="this.src='images/hero2.png'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section id="about" class="page-section">
+        <div class="page-header">
+            <h2>About Abhishek Gaur</h2>
+            <p>Leadership Coordination, Strategic Communications & Public Narratives</p>
+        </div>
+        <div class="cards-grid">
+            <div class="custom-card">
+                <div class="card-icon-box"><i class="fas fa-bullhorn"></i></div>
+                <h3>Digital Narrative & Strategy</h3>
+                <p>Executing targeted digital communication campaigns, public relations strategy, and high-level social media planning.</p>
+            </div>
+            <div class="custom-card">
+                <div class="card-icon-box"><i class="fas fa-handshake"></i></div>
+                <h3>Leadership Coordination</h3>
+                <p>Strategic management and liaison with Party Leadership, State Ministers, Board Chairmen, and Organizational Directors.</p>
+            </div>
+            <div class="custom-card">
+                <div class="card-icon-box"><i class="fas fa-tv"></i></div>
+                <h3>Media Platforms Owner</h3>
+                <p>Heading influential media houses including Newsline Live, Drishti 360, and DGT Podcast Network.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: POLITICAL SAFAR -->
+    <section id="safar" class="page-section">
+        <div class="page-header">
+            <h2>Abhishek Ka Safar</h2>
+            <p>Political Leadership, High-Level Meetings & On-Ground Public Engagements</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card"><img src="images/cm.png" alt="CM"><div class="gallery-caption"><span>With Hon'ble CM Bhagwant Mann</span></div></div>
+            <div class="gallery-card"><img src="images/Manish Sisodia.png" alt="Sisodia"><div class="gallery-caption"><span>Meeting with Former Deputy CM Manish Sisodia</span></div></div>
+            <div class="gallery-card"><img src="images/Homeminister met.png" alt="Home Minister"><div class="gallery-caption"><span>High-Level Meeting with Home Minister</span></div></div>
+            <div class="gallery-card"><img src="images/aman.png" alt="Aman Arora"><div class="gallery-caption"><span>With Cabinet Minister Aman Arora</span></div></div>
+            <div class="gallery-card"><img src="images/metchairrmanstate.png" alt="Chairman"><div class="gallery-caption"><span>State Board Chairmen Coordination Meeting</span></div></div>
+            <div class="gallery-card"><img src="images/Ministers Meeting 1.png" alt="Ministers"><div class="gallery-caption"><span>Strategic Deliberations with Ministers</span></div></div>
+            <div class="gallery-card"><img src="images/chiefguestgsp.png" alt="Gurdaspur"><div class="gallery-caption"><span>Official Administrative Meeting in Gurdaspur</span></div></div>
+            <div class="gallery-card"><img src="images/Grand Event.png" alt="Grand Event"><div class="gallery-caption"><span>Grand Event & Strategic Planning</span></div></div>
+            <div class="gallery-card"><img src="images/abhishek ka safar 1.png" alt="Field"><div class="gallery-caption"><span>Field Work & Agriculture Support</span></div></div>
+            <div class="gallery-card"><img src="images/abhishek ka safar 4.png" alt="Ops"><div class="gallery-caption"><span>Strategic Field Operations</span></div></div>
+            <div class="gallery-card"><img src="images/abhishek ka safar 5.png" alt="Rally"><div class="gallery-caption"><span>Patriotic & State Rallies</span></div></div>
+            <div class="gallery-card"><img src="images/abhishek ka safar 7.png" alt="Flag"><div class="gallery-caption"><span>Public Rallies & Flag Marches</span></div></div>
+            <div class="gallery-card"><img src="images/abhishek ka safar 8.png" alt="Speech"><div class="gallery-caption"><span>Address at Public Meetings</span></div></div>
+            <div class="gallery-card"><img src="images/abhishek ka safar 9.png" alt="Grassroot"><div class="gallery-caption"><span>Grassroot Public Meetings</span></div></div>
+            <div class="gallery-card"><img src="images/abhishekkasafar10.png" alt="Social"><div class="gallery-caption"><span>Community Service & Social Work</span></div></div>
+            <div class="gallery-card"><img src="images/abhishekkasafar11.png" alt="Sports"><div class="gallery-caption"><span>Youth & Sports Talent Promotion</span></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION: DYNAMIC NEWS & MEDIA COVERAGE -->
+    <section id="news" class="page-section">
+        <div class="page-header">
+            <h2>Latest News & Media Coverage</h2>
+            <p>Official Statements, Press Releases & Event Bulletins</p>
+        </div>
+        <div class="news-grid" id="dynamicNewsContainer">
+            <p style="text-align:center; color:var(--text-secondary); width:100%; grid-column: 1 / -1;">Loading Latest News Bulletins...</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: MEDIA VENTURES -->
+    <section id="platforms" class="page-section">
+        <div class="page-header">
+            <h2>Media Ventures & Platforms</h2>
+            <p>Independent News Outlets, Digital Studios & Creative Platforms</p>
+        </div>
+        <div class="cards-grid">
+            <div class="custom-card platform-box">
+                <div class="platform-logo-frame">
+                    <img src="images/drishti-logo.png" alt="Drishti 360 Official Logo" onerror="this.onerror=null; this.src='images/bheyam logo 2.png';">
+                </div>
+                <h3>Drishti 360</h3>
+                <p>In-depth news analysis, public policy perspectives, and digital narratives.</p>
+                <div class="platform-links">
+                    <a href="https://www.instagram.com/drishti360company?igsh=MTltODgxZGwzMTFiYg==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://youtube.com/@drishti360company?si=vlM7NYTd-6LvY8Rp" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+            
+            <div class="custom-card platform-box">
+                <div class="platform-logo-frame"><img src="images/logo-newsline.jpg" alt="Newsline"></div>
+                <h3>Newsline Live</h3>
+                <p>Real-time news updates, ground-zero political coverage, and live bulletins.</p>
+                <div class="platform-links">
+                    <a href="https://www.instagram.com/newslinelive?igsh=bWV2NXA0YnVjeHFz" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.facebook.com/share/19M1GPyqjm/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://youtube.com/@newslinelives?si=sUmkUJvE4P9NfHJd" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+
+            <div class="custom-card platform-box">
+                <div class="platform-logo-frame">
+                    <img src="images/Dgtpodcast logo.png" alt="DGT Logo" onerror="this.onerror=null; this.src='images/logo-dgt.png';">
+                </div>
+                <h3>DGT Show / Podcast</h3>
+                <p>Exclusive political interviews, leader podcasts, and public discussions.</p>
+                <div class="platform-links">
+                    <a href="https://www.instagram.com/dgt_2026?igsh=dTJxNWU3OGhoYWE0" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#dgt-register"><i class="fas fa-star" style="color:#f59e0b;"></i> Audition Form</a>
+                </div>
+            </div>
+
+            <div class="custom-card platform-box">
+                <div class="platform-logo-frame"><img src="images/logo-gaursesuno.jpg" alt="Gaur"></div>
+                <h3>Gaur Diaries / Gaur Se Suno</h3>
+                <p>Personal editorial platform, political commentaries, and direct video commentary.</p>
+                <div class="platform-links">
+                    <a href="https://youtube.com/@thedrishtiinsights.views.234k?si=U9iRpk5KqXZbtYpe" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="https://www.facebook.com/share/19CNdDPTDr/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: DGT AUDITION FORM WITH SECURITY PIN -->
+    <section id="dgt-register" class="page-section">
+        <div class="page-header">
+            <h2>DGT Podcast & Talent Show Registration</h2>
+            <p>Apply to perform, get interviewed, or showcase your talent on DGT Show</p>
+        </div>
+
+        <div class="gallery-grid" style="margin-bottom: 25px;">
+            <div class="gallery-card"><img src="images/Audition.png" alt="Audition 1"><div class="gallery-caption"><span>DGT Talent Auditions Showcase</span></div></div>
+            <div class="gallery-card"><img src="images/Audition 2.png" alt="Audition 2"><div class="gallery-caption"><span>Rising Stars & Featured Artists</span></div></div>
+        </div>
+
+        <div class="dgt-form-section">
+            <h3 style="margin-bottom: 20px; text-align: center; color: var(--accent); font-size: 18px;"><i class="fas fa-id-card"></i> Candidate Audition Form</h3>
+            <form id="auditionForm" onsubmit="generateAdmitCard(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="candName" class="form-control" placeholder="Enter your complete name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile / WhatsApp Number *</label>
+                        <input type="tel" id="candPhone" class="form-control" placeholder="Enter 10 digit mobile number" pattern="[0-9]{10}" title="Please enter 10 digit mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>City / Location *</label>
+                        <input type="text" id="candCity" class="form-control" placeholder="e.g. Dinanagar / Gurdaspur" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Talent Category *</label>
+                        <select id="candCategory" class="form-control" required>
+                            <option value="">Select Category</option>
+                            <option value="Political / Public Speaker">Political / Public Speaker</option>
+                            <option value="Anchor / Journalist">Anchor / Journalist</option>
+                            <option value="Singer / Musician">Singer / Musician</option>
+                            <option value="Actor / Performing Artist">Actor / Performing Artist</option>
+                            <option value="Special Guest / Story">Special Guest / Story</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Set 4-Digit Secret PIN * (For Security)</label>
+                        <input type="password" id="candPin" class="form-control" placeholder="Create 4-digit secret PIN (e.g. 1234)" pattern="[0-9]{4}" maxlength="4" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Your Photo *</label>
+                        <input type="file" id="candPhoto" class="form-control" accept="image/*">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Brief Introduction / Talent Detail *</label>
+                        <textarea id="candBio" class="form-control" rows="3" placeholder="Tell us about your background and talent..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn-main btn-accent full-width" style="margin-top: 20px; width: 100%; justify-content: center;">
+                    <i class="fas fa-ticket-alt"></i> Generate / Access Digital Admit Card
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION 6: HONOURS -->
+    <section id="honours" class="page-section">
+        <div class="page-header">
+            <h2>Honours & Achievements</h2>
+            <p>Recognitions, Awards & Felicitation Ceremonies by State Leaders</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card"><img src="images/AwardbyDM.png" alt="DM"><div class="gallery-caption"><span>Honoured by District Magistrate Dr. Himanshu Aggarwal</span></div></div>
+            <div class="gallery-card"><img src="images/Chief guest.png" alt="Guest"><div class="gallery-caption"><span>Presiding as Chief Guest in Official Conference</span></div></div>
+            <div class="gallery-card"><img src="images/Award distribution 1.png" alt="Jasleen"><div class="gallery-caption"><span>Skill Development Award Felicitation</span></div></div>
+            <div class="gallery-card"><img src="images/awards distribution 2.png" alt="Neha"><div class="gallery-caption"><span>Educational & Skill Award Presentation</span></div></div>
+            <div class="gallery-card"><img src="images/achievements.png" alt="Leader"><div class="gallery-caption"><span>Felicitation by Senior Leadership</span></div></div>
+            <div class="gallery-card"><img src="images/achievements 3.png" alt="State"><div class="gallery-caption"><span>State Level Honour & Gathering</span></div></div>
+            <div class="gallery-card"><img src="images/honour 2.png" alt="H2"><div class="gallery-caption"><span>Community Leadership Award</span></div></div>
+            <div class="gallery-card"><img src="images/honour 3.png" alt="H3"><div class="gallery-caption"><span>Organizational Excellence Award</span></div></div>
+            <div class="gallery-card"><img src="images/honour 5.png" alt="H5"><div class="gallery-caption"><span>Memento Presentation by State Committee</span></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAMILY & PAITRIK ROOTS -->
+    <section id="family" class="page-section">
+        <div class="page-header">
+            <h2>Family & Roots</h2>
+            <p>Heritage, Paitrik Legacy & Family Support System</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card"><img src="images/paitrik family.png" alt="Paitrik Legacy"><div class="gallery-caption"><span>Paitrik Family & Heritage</span></div></div>
+            <div class="gallery-card"><img src="images/paitrik3.png" alt="Mere Bete Paitrik"><div class="gallery-caption"><span>Mere Bete Paitrik - Hamari Sabse Badi Punji</span></div></div>
+            <div class="gallery-card"><img src="images/paitrik4.png" alt="Paitrik Champion Shot"><div class="gallery-caption"><span>Paitrik - Champion Shot & Talent</span></div></div>
+            <div class="gallery-card"><img src="images/family 1.png" alt="Family Moment 1"><div class="gallery-caption"><span>Family Celebration & Gathering</span></div></div>
+            <div class="gallery-card"><img src="images/family 2.png" alt="Family Moment 2"><div class="gallery-caption"><span>Personal Family Moments</span></div></div>
+            <div class="gallery-card"><img src="images/family 3.png" alt="Family Moment 3"><div class="gallery-caption"><span>Family Event & Milestones</span></div></div>
+            <div class="gallery-card"><img src="images/Family 4.png" alt="Family Support"><div class="gallery-caption"><span>Supportive Family System</span></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: CONTACT -->
+    <section id="contact" class="page-section">
+        <div class="page-header">
+            <h2>Connect With Abhishek Gaur</h2>
+            <p>Official Social Profiles & Strategic Contact Channels</p>
+        </div>
+        <div class="social-grid">
+            <a href="https://www.instagram.com/abhishekvenusgaur?igsh=MTVpMjI4NXI4bjJhZQ==" target="_blank" class="social-item insta"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1BiSyUzrRK/" target="_blank" class="social-item fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="mailto:abhishekgaur.2017@gmail.com" class="social-item email"><i class="fas fa-envelope"></i> abhishekgaur.2017@gmail.com</a>
+            <a href="https://api.whatsapp.com/send?phone=919103579840&text=Hello%20Abhishek%20Ji" target="_blank" class="social-item wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
+            <a href="tel:08054228632" class="social-item call-btn"><i class="fas fa-phone-alt"></i> Helpline: 080542 28632</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Abhishek Gaur. All Rights Reserved. | <span id="adminSecretTrigger" onclick="handleAdminTrigger()" style="color: var(--accent); cursor: pointer;">abhishekgaur.co.in</span></p>
+    </footer>
+
+    <!-- 1. WATERMARKED DIGITAL ADMIT CARD MODAL -->
+    <div id="admitCardModal" class="custom-modal">
+        <div class="modal-box" style="padding: 16px;">
+            <div class="admit-card-design" id="admitCardTarget">
+                <img src="images/Dgtpodcast logo.png" class="admit-watermark" alt="DGT Watermark" onerror="this.src='images/logo-dgt.png'">
+                
+                <div class="admit-header">
+                    <h3>DGT SHOW AUDITION PASS</h3>
+                    <p>Official Digital Admit Card | Presented by Abhishek Gaur</p>
+                </div>
+
+                <!-- ADDED DATE, TIME & VENUE SCHEDULE BADGE -->
+                <div class="schedule-badge">
+                    <div><i class="fas fa-calendar-alt"></i> Date: <strong>2 Aug 2026</strong> &nbsp;|&nbsp; <i class="fas fa-clock"></i> Time: <strong>10:00 AM</strong></div>
+                    <div style="margin-top: 3px;"><i class="fas fa-map-marker-alt" style="color: #ef4444;"></i> Venue: <strong>Royal Palace, DAV School Road, Dinanagar</strong></div>
+                </div>
+                
+                <div class="admit-body">
+                    <img id="cardPhotoPreview" class="admit-photo" src="" alt="Candidate Photo">
+                    <div class="admit-details">
+                        <p><strong>Name:</strong> <span id="cardName"></span></p>
+                        <p><strong>Category:</strong> <span id="cardCategory"></span></p>
+                        <p><strong>City:</strong> <span id="cardCity"></span></p>
+                        <p><strong>Phone:</strong> <span id="cardPhone"></span></p>
+                        <p style="margin-top: 4px;"><span class="reg-id-badge" id="cardRegId">ID: DGT-2026-000</span></p>
+                    </div>
+                </div>
+
+                <div class="barcode-box">
+                    <div class="barcode-text" id="barcodeGen">*DGT2026*</div>
+                    <span style="font-size: 11px; color: #64748b; font-weight: 600;">SCAN / VERIFIED OFFICIAL PASS</span>
+                </div>
+
+                <div class="admit-footer-buttons" id="passActionButtons">
+                    <button onclick="downloadAdmitCard()" class="btn-main btn-accent" style="padding: 8px 16px; font-size: 12px; width: 48%; justify-content: center;"><i class="fas fa-download"></i> Download Pass</button>
+                    <button onclick="closeModal('admitCardModal')" class="btn-main btn-dark" style="padding: 8px 16px; font-size: 12px; background:#ef4444; border:none; color:#fff; width: 48%; justify-content: center;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. WELCOME BACK / PIN UNLOCK MODAL -->
+    <div id="welcomeBackModal" class="custom-modal">
+        <div class="modal-box" style="text-align: center;">
+            <div style="font-size: 40px; color: var(--gold); margin-bottom: 10px;"><i class="fas fa-user-shield"></i></div>
+            <h3 style="color: #0284c7; font-size: 20px; margin-bottom: 8px;">Welcome Back Candidate!</h3>
+            <p style="font-size: 13px; color: #475569; margin-bottom: 20px;">Ye mobile number pehle se registered hai. Kripya apna 4-Digit Secret PIN daal kar Pass unlock karein:</p>
+            
+            <input type="password" id="unlockPinInput" class="form-control" placeholder="Enter 4-Digit Secret PIN" maxlength="4" style="text-align: center; font-size: 18px; letter-spacing: 4px; margin-bottom: 15px; color: #000; background: #f1f5f9; border: 2px solid #cbd5e1;">
+            
+            <button onclick="verifyUnlockPin()" class="btn-main btn-accent" style="width: 100%; justify-content: center; margin-bottom: 12px;"><i class="fas fa-unlock-alt"></i> Unlock My Admit Pass</button>
+            
+            <a id="waRecoverBtn" href="#" target="_blank" class="btn-main btn-gold" style="width: 100%; justify-content: center; text-decoration: none; font-size: 12px; background: #25d366; color: #fff;"><i class="fab fa-whatsapp"></i> Forgot PIN? Recover On WhatsApp</a>
+            
+            <button onclick="closeModal('welcomeBackModal')" style="background: transparent; border: none; color: #64748b; font-size: 12px; margin-top: 15px; cursor: pointer; text-decoration: underline;">Cancel</button>
+        </div>
+    </div>
+
+    <!-- 3. FULL NEWS MODAL -->
+    <div id="newsModal" class="custom-modal">
+        <div class="modal-box">
+            <h3 id="newsModalTitle" style="color: #0284c7; font-size: 20px; margin-bottom: 8px;"></h3>
+            <p id="newsModalDate" style="font-size: 12px; color: #64748b; margin-bottom: 15px; font-weight: 600;"></p>
+            <img id="newsModalImg" src="" style="width: 100%; max-height: 220px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;" alt="News Detail Image">
+            <div id="newsModalText" style="font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 20px; white-space: pre-wrap;"></div>
+            <div style="text-align: right;">
+                <button onclick="closeModal('newsModal')" class="btn-main btn-accent" style="padding: 6px 16px; font-size: 12px;">Close Article</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. SECRET ADMIN MANAGEMENT PANEL MODAL -->
+    <div id="adminPanelModal" class="custom-modal">
+        <div class="modal-box" style="max-width: 600px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; margin-bottom: 15px;">
+                <h3 style="color: #0284c7; font-size: 18px;"><i class="fas fa-user-lock"></i> Master Admin Control</h3>
+                <span onclick="closeModal('adminPanelModal')" style="cursor: pointer; font-weight: 700; color: #ef4444;"> Close</span>
+            </div>
+            <p style="font-size: 12px; color: #64748b; margin-bottom: 15px;">List of locally registered candidate entries. Reset entry if candidate requests PIN recovery:</p>
+            <div id="adminRecordsList" style="max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Navigation, Dynamic News Engine & System Operations -->
+    <script>
+        let currentPhoneChecking = "";
+        let adminClickCount = 0;
+        let globalNewsData = [];
+
+        function toggleMobileNav() {
+            document.getElementById('navMenu').classList.toggle('mobile-open');
+        }
+
+        function closeNav() {
+            document.getElementById('navMenu').classList.remove('mobile-open');
+        }
+
+        function toggleAiChat() {
+            const box = document.getElementById('aiChatBox');
+            box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function sendQuickQuery(query) {
+            const body = document.getElementById('aiChatBody');
+            body.innerHTML += `<div class="user-msg">${query}</div>`;
+            
+            setTimeout(() => {
+                let reply = "Abhishek Gaur is a Strategic Coordinator and Media Specialist managing high-level campaigns and media ventures like Drishti 360 and DGT Show.";
+                if(query.includes('DGT')) reply = "Aap DGT Show ke liye upar diye gaye Audition Form ko bharkar turant apna Digital Admit Card generate kar sakte hain!";
+                if(query.includes('Helpline')) reply = "Aap hamari official helpline par call kar sakte hain: 080542 28632 ya WhatsApp (+91 9103579840) par message karein.";
+                
+                body.innerHTML += `<div class="ai-msg">${reply}</div>`;
+                body.scrollTop = body.scrollHeight;
+            }, 400);
+        }
+
+        /* FIXED & BULLETPROOF GOOGLE SHEET NEWS FETCHING ENGINE */
+        async function fetchGoogleSheetNews() {
+            const container = document.getElementById('dynamicNewsContainer');
+            
+            try {
+                const sheetId = "1qU1OEpAN3SQsYS2LnMj6RHsPfF3xID7lZ6UQgGA2PCg";
+                const jsonEndpoint = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+                
+                const response = await fetch(jsonEndpoint);
+                const textData = await response.text();
+                
+                const jsonString = textData.substring(47, textData.length - 2);
+                const json = JSON.parse(jsonString);
+                const rows = json.table.rows;
+
+                if (!rows || rows.length === 0) {
+                    renderDefaultNews(container);
+                    return;
+                }
+
+                container.innerHTML = "";
+                globalNewsData = [];
+
+                for (let i = rows.length - 1; i >= 0; i--) {
+                    const rowCells = rows[i].c;
+                    if (!rowCells || !rowCells[1]) continue;
+
+                    const title = rowCells[1] ? rowCells[1].v : "Drishti 360 News Update";
+                    const categoryDate = rowCells[2] ? rowCells[2].v : "Press Release";
+                    
+                    let imageSrc = rowCells[3] ? rowCells[3].v : "";
+                    if (!imageSrc || imageSrc.includes("drive.google.com")) {
+                        imageSrc = "images/drishti-logo.png";
+                    }
+
+                    const fullContent = rowCells[4] ? rowCells[4].v : title;
+                    const excerpt = fullContent.substring(0, 110) + "...";
+
+                    const newsIndex = globalNewsData.length;
+                    globalNewsData.push({
+                        title: title,
+                        date: categoryDate,
+                        img: imageSrc,
+                        text: fullContent
+                    });
+
+                    const newsCardHtml = `
+                        <div class="news-card">
+                            <img src="${imageSrc}" class="news-img" alt="News Image" onerror="this.src='images/drishti-logo.png'">
+                            <div class="news-content">
+                                <span class="news-date"><i class="fas fa-calendar-alt"></i> ${categoryDate}</span>
+                                <h3 class="news-title">${title}</h3>
+                                <p class="news-excerpt">${excerpt}</p>
+                                <button class="btn-main btn-accent" style="padding: 8px 16px; font-size: 12px; margin-top: auto;" onclick="openNewsModalByIndex(${newsIndex})">Read Full News <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += newsCardHtml;
+                }
+            } catch (error) {
+                console.log("Sheet fetch fallback triggered", error);
+                renderDefaultNews(container);
+            }
+        }
+
+        function renderDefaultNews(container) {
+            globalNewsData = [{
+                title: "DGT Talent Auditions Season 1 Launch Announced by Abhishek Gaur",
+                date: "Press Release | July 2026",
+                img: "images/Grand Event.png",
+                text: "Abhishek Gaur officially launched the digital registration campaign for the DGT Show Auditions. The program aims to give a platform to talented speakers, singers, anchors, and storytellers from Dinanagar, Gurdaspur, and all surrounding regions."
+            }];
+
+            container.innerHTML = `
+                <div class="news-card">
+                    <img src="images/Grand Event.png" class="news-img" alt="News 1">
+                    <div class="news-content">
+                        <span class="news-date"><i class="fas fa-calendar-alt"></i> Press Release | July 2026</span>
+                        <h3 class="news-title">DGT Talent Auditions Season 1 Launch Announced by Abhishek Gaur</h3>
+                        <p class="news-excerpt">Official registration portal is now live for all rising stars, anchors, and artists across Punjab to feature in upcoming podcast episodes.</p>
+                        <button class="btn-main btn-accent" style="padding: 8px 16px; font-size: 12px; margin-top: auto;" onclick="openNewsModalByIndex(0)">Read Full News <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function openNewsModalByIndex(index) {
+            const item = globalNewsData[index];
+            if(!item) return;
+
+            document.getElementById('newsModalTitle').innerText = item.title;
+            document.getElementById('newsModalDate').innerText = item.date;
+            document.getElementById('newsModalImg').src = item.img;
+            document.getElementById('newsModalText').innerText = item.text;
+            document.getElementById('newsModal').style.display = 'flex';
+        }
+
+        /* DGT ADMIT CARD GENERATION & PIN VERIFICATION SYSTEM */
+        function generateAdmitCard(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('candName').value.trim();
+            const phone = document.getElementById('candPhone').value.trim();
+            const city = document.getElementById('candCity').value.trim();
+            const category = document.getElementById('candCategory').value;
+            const pin = document.getElementById('candPin').value.trim();
+            const photoInput = document.getElementById('candPhoto');
+
+            let registrations = JSON.parse(localStorage.getItem('dgt_registrations') || '{}');
+
+            if (registrations[phone]) {
+                currentPhoneChecking = phone;
+                
+                const waText = encodeURIComponent("Hello Abhishek Ji, mera registered mobile number " + phone + " hai. Main apna DGT Secret PIN bhool gaya hoon. Kripya mera pass confirm karein.");
+                document.getElementById('waRecoverBtn').href = "https://api.whatsapp.com/send?phone=919103579840&text=" + waText;
+                
+                document.getElementById('unlockPinInput').value = "";
+                document.getElementById('welcomeBackModal').style.display = 'flex';
+                return;
+            }
+
+            if (photoInput.files && photoInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const photoData = e.target.result;
+                    const randomId = 'DGT-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+                    registrations[phone] = {
+                        name: name,
+                        phone: phone,
+                        city: city,
+                        category: category,
+                        pin: pin,
+                        regId: randomId,
+                        photo: photoData
+                    };
+                    localStorage.setItem('dgt_registrations', JSON.stringify(registrations));
+
+                    showAdmitCard(registrations[phone]);
+                }
+                reader.readAsDataURL(photoInput.files[0]);
+            } else {
+                alert("Kripya apni photo upload karein pass generate karne ke liye!");
+            }
+        }
+
+        function verifyUnlockPin() {
+            const enteredPin = document.getElementById('unlockPinInput').value.trim();
+            let registrations = JSON.parse(localStorage.getItem('dgt_registrations') || '{}');
+            const candidate = registrations[currentPhoneChecking];
+
+            if (candidate && candidate.pin === enteredPin) {
+                closeModal('welcomeBackModal');
+                showAdmitCard(candidate);
+            } else {
+                alert(" Galat Security PIN! Kripya sahi PIN daalein ya niche WhatsApp button se support lein.");
+            }
+        }
+
+        function showAdmitCard(data) {
+            document.getElementById('cardName').innerText = data.name;
+            document.getElementById('cardPhone').innerText = data.phone;
+            document.getElementById('cardCity').innerText = data.city;
+            document.getElementById('cardCategory').innerText = data.category;
+            document.getElementById('cardRegId').innerText = data.regId;
+            document.getElementById('barcodeGen').innerText = "*" + data.regId.replace(/-/g, "") + "*";
+            
+            if (data.photo) {
+                document.getElementById('cardPhotoPreview').src = data.photo;
+            }
+            document.getElementById('admitCardModal').style.display = 'flex';
+        }
+
+        /* HD SNAPSHOT WITH AUTOMATIC BUTTON HIDING FIX */
+        function downloadAdmitCard() {
+            const card = document.getElementById('admitCardTarget');
+            const actionBtns = document.getElementById('passActionButtons');
+            const regId = document.getElementById('cardRegId').innerText || 'DGT-Pass';
+            
+            actionBtns.style.display = 'none';
+
+            html2canvas(card, { scale: 3, useCORS: true, backgroundColor: '#ffffff' }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = regId + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+
+                actionBtns.style.display = 'flex';
+            });
+        }
+
+        /* SECRET ADMIN CONSOLE SYSTEM (TRIPLE CLICK FOOTER LINK) */
+        function handleAdminTrigger() {
+            adminClickCount++;
+            if (adminClickCount === 3) {
+                adminClickCount = 0;
+                renderAdminPanel();
+                document.getElementById('adminPanelModal').style.display = 'flex';
+            }
+            setTimeout(() => { adminClickCount = 0; }, 2000);
+        }
+
+        function renderAdminPanel() {
+            let registrations = JSON.parse(localStorage.getItem('dgt_registrations') || '{}');
+            const container = document.getElementById('adminRecordsList');
+            container.innerHTML = "";
+
+            const keys = Object.keys(registrations);
+            if (keys.length === 0) {
+                container.innerHTML = "<p style='font-size:13px; color:#94a3b8;'>Koi registered records nahi mile.</p>";
+                return;
+            }
+
+            keys.forEach(phone => {
+                const item = registrations[phone];
+                container.innerHTML += `
+                    <div style="background:#f1f5f9; padding:10px 14px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; color:#1e293b;">
+                        <div>
+                            <strong>${item.name}</strong> (${item.phone})<br>
+                            <span style="color:#0284c7;">ID: ${item.regId}</span> | <span>PIN: ${item.pin}</span>
+                        </div>
+                        <button onclick="deleteRecord('${item.phone}')" style="background:#ef4444; color:#fff; border:none; padding:5px 10px; border-radius:6px; font-size:11px; cursor:pointer;">Reset Entry</button>
+                    </div>
+                `;
+            });
+        }
+
+        function deleteRecord(phone) {
+            if (confirm("Kya aap " + phone + " ka record reset karna chahte hain?")) {
+                let registrations = JSON.parse(localStorage.getItem('dgt_registrations') || '{}');
+                delete registrations[phone];
+                localStorage.setItem('dgt_registrations', JSON.stringify(registrations));
+                renderAdminPanel();
+            }
+        }
+
+        // Initialize News Engine On Page Load
+        window.addEventListener('DOMContentLoaded', fetchGoogleSheetNews);
+    </script>
+</body>
+</html>

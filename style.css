@@ -1,0 +1,24 @@
+/* Dual Hero Image Setup */
+.img-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-main-img, .hero-sub-img {
+    max-width: 220px;
+    border-radius: 16px;
+    border: 2px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .img-wrapper {
+        flex-direction: column;
+    }
+    .hero-main-img, .hero-sub-img {
+        max-width: 260px;
+    }
+}
