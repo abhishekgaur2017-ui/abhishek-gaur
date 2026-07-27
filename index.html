@@ -3,62 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Gaur - Official Portal & DGT 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Abhishek Gaur - Official VIP Portal & DGT 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         body {
-            background-color: #050505;
+            background-color: #030303;
             color: #f3f4f6;
             overflow-x: hidden;
         }
-        /* Navbar */
+        /* Elite Navbar */
         .navbar {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 25px;
+            background: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 16px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #262626;
+            border-bottom: 1px solid #1f1f1f;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .logo-text {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.25rem;
+            font-weight: 800;
             color: #d4af37;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 22px;
             list-style: none;
             overflow-x: auto;
+            padding: 5px 0;
         }
+        .nav-links::-webkit-scrollbar { display: none; }
         .nav-links a {
-            color: #a3a3a3;
+            color: #9ca3af;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.88rem;
+            font-weight: 600;
             white-space: nowrap;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
         .nav-links a:hover {
             color: #d4af37;
         }
         /* Hero Header */
         header {
-            padding: 60px 20px;
+            padding: 70px 20px;
             background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
-            border-bottom: 1px solid #262626;
+            border-bottom: 1px solid #1f1f1f;
             text-align: center;
         }
         .hero-container {
@@ -75,7 +77,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #d4af37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
         }
         header h1 {
             font-family: 'Cinzel', serif;
@@ -88,33 +90,35 @@
             font-size: 1.15rem;
             color: #d4af37;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
         /* Container */
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 40px auto;
             padding: 0 20px;
         }
         .card {
-            background: #0f0f0f;
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            margin-bottom: 35px;
-            border: 1px solid #262626;
+            background: #0a0a0a;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            margin-bottom: 40px;
+            border: 1px solid #1f1f1f;
         }
         .card h2 {
             font-family: 'Cinzel', serif;
             color: #d4af37;
-            margin-bottom: 20px;
-            font-size: 1.6rem;
+            margin-bottom: 25px;
+            font-size: 1.7rem;
             font-weight: 700;
-            border-bottom: 1px solid #262626;
-            padding-bottom: 12px;
+            border-bottom: 1px solid #1f1f1f;
+            padding-bottom: 15px;
+            letter-spacing: 0.5px;
         }
         .content-text {
             line-height: 1.8;
-            color: #a3a3a3;
+            color: #9ca3af;
             font-size: 1.05rem;
         }
         /* Grid Layouts */
@@ -122,18 +126,19 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         .grid-box {
-            background: #050505;
-            padding: 22px;
-            border-radius: 12px;
-            border: 1px solid #262626;
+            background: #030303;
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid #1a1a1a;
         }
         .grid-box h3 {
             color: #d4af37;
             margin-bottom: 8px;
             font-size: 1.1rem;
+            font-weight: 700;
         }
         /* Photo Gallery */
         .photo-grid {
@@ -143,9 +148,9 @@
             margin-top: 20px;
         }
         .photo-card {
-            background: #050505;
-            border: 1px solid #262626;
-            border-radius: 12px;
+            background: #030303;
+            border: 1px solid #1a1a1a;
+            border-radius: 14px;
             overflow: hidden;
             text-align: center;
         }
@@ -154,17 +159,17 @@
             height: 230px;
             object-fit: contain;
             background: #000;
-            border-bottom: 1px solid #262626;
+            border-bottom: 1px solid #1a1a1a;
         }
         .photo-card p {
-            padding: 14px;
+            padding: 15px;
             color: #e5e7eb;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
         }
         /* Forms */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
         .form-group label {
             display: block;
@@ -175,70 +180,78 @@
         }
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #333333;
-            background: #050505;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #262626;
+            background: #030303;
             color: #fff;
             font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: #d4af37;
         }
         .btn {
-            padding: 14px 28px;
+            padding: 16px 28px;
             background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
-            color: #000000;
-            font-weight: 700;
+            color: #030303;
+            font-weight: 800;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
             width: 100%;
             letter-spacing: 0.5px;
         }
         .btn:hover {
-            opacity: 0.9;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            opacity: 0.95;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
-        /* Social Cards */
+        
+        /* Elite Social Cards */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
             margin-top: 20px;
         }
         .social-card {
-            background: #050505;
-            border: 1px solid #262626;
-            padding: 18px;
-            border-radius: 12px;
-            text-align: center;
+            background: #030303;
+            border: 1px solid #1a1a1a;
+            padding: 16px 20px;
+            border-radius: 14px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 15px;
-            transition: all 0.3s;
+            gap: 16px;
+            transition: all 0.3s ease;
         }
         .social-card:hover {
             transform: translateY(-3px);
             border-color: #d4af37;
-            background: #121212;
+            background: #0d0d0d;
         }
         .social-card img {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             object-fit: contain;
-            border-radius: 8px;
-            background: #0f0f0f;
+            border-radius: 10px;
+            background: #0a0a0a;
             padding: 4px;
+            border: 1px solid #262626;
         }
         .social-info {
             text-align: left;
         }
         .social-info .platform {
             color: #d4af37;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
         }
         .social-info .name {
             color: #ffffff;
@@ -246,19 +259,19 @@
             font-weight: 700;
         }
         
-        /* STRICT PORTRAIT ADMIT CARD (Gold & Black Luxury Pass) */
+        /* CORPORATE ID CARD STYLE (Strict Portrait VIP Pass) */
         #admitCardTarget {
             display: none;
             width: 100%;
-            max-width: 420px;
-            margin: 30px auto 0 auto;
+            max-width: 440px;
+            margin: 35px auto 0 auto;
             background: #0a0a0a;
             color: #f3f4f6;
-            padding: 30px;
-            border-radius: 16px;
+            padding: 35px;
+            border-radius: 20px;
             border: 3px solid #d4af37;
             position: relative;
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.25);
             text-align: left;
         }
         .admit-watermark {
@@ -267,7 +280,7 @@
             left: 50%;
             transform: translate(-50%, -50%) rotate(-35deg);
             font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             color: rgba(212, 175, 55, 0.05);
             font-weight: 800;
             z-index: 0;
@@ -294,9 +307,7 @@
             text-decoration: none;
             transition: transform 0.3s;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
         
         /* AI Chatbot Widget */
         .chatbot-btn {
@@ -304,7 +315,7 @@
             bottom: 25px;
             left: 25px;
             background: #d4af37;
-            color: #000;
+            color: #030303;
             width: 55px;
             height: 55px;
             border-radius: 50%;
@@ -322,24 +333,24 @@
             bottom: 95px;
             left: 25px;
             width: 320px;
-            background: #0f0f0f;
+            background: #0a0a0a;
             border: 1px solid #d4af37;
-            border-radius: 14px;
+            border-radius: 16px;
             display: none;
             flex-direction: column;
             z-index: 9999;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
             overflow: hidden;
         }
         .chat-header {
-            background: #1a1a1a;
-            padding: 12px 15px;
+            background: #141414;
+            padding: 14px 18px;
             color: #d4af37;
             font-weight: 700;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #262626;
+            border-bottom: 1px solid #222;
         }
         .chat-body {
             padding: 15px;
@@ -352,45 +363,45 @@
             gap: 10px;
         }
         .chat-msg {
-            background: #1a1a1a;
-            padding: 8px 12px;
-            border-radius: 8px;
+            background: #141414;
+            padding: 9px 13px;
+            border-radius: 10px;
             max-width: 85%;
         }
         .chat-msg.bot { align-self: flex-start; }
-        .chat-msg.user { align-self: flex-end; background: #d4af37; color: #000; font-weight: 600; }
+        .chat-msg.user { align-self: flex-end; background: #d4af37; color: #030303; font-weight: 700; }
         .chat-footer {
             display: flex;
             padding: 10px;
-            background: #050505;
-            border-top: 1px solid #262626;
+            background: #030303;
+            border-top: 1px solid #222;
         }
         .chat-footer input {
             flex: 1;
-            padding: 8px;
-            border-radius: 6px;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid #333;
-            background: #0f0f0f;
+            background: #0a0a0a;
             color: #fff;
             font-size: 0.85rem;
         }
         .chat-footer button {
             background: #d4af37;
             border: none;
-            padding: 8px 12px;
-            margin-left: 5px;
-            border-radius: 6px;
+            padding: 10px 14px;
+            margin-left: 6px;
+            border-radius: 8px;
             font-weight: bold;
-            color: #000;
+            color: #030303;
         }
         
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
-            color: #737373;
-            background: #050505;
-            border-top: 1px solid #262626;
+            padding: 35px;
+            color: #666;
+            background: #030303;
+            border-top: 1px solid #1f1f1f;
             font-size: 0.95rem;
             cursor: pointer;
         }
@@ -405,10 +416,10 @@
             z-index: 10000;
         }
         .admin-content {
-            background: #0f0f0f;
-            padding: 30px;
-            border-radius: 14px;
-            width: 90%; max-width: 500px;
+            background: #0a0a0a;
+            padding: 35px;
+            border-radius: 18px;
+            width: 90%; max-width: 520px;
             border: 1px solid #d4af37;
         }
     </style>
@@ -442,6 +453,7 @@
             <li><a href="#safar">Safar</a></li>
             <li><a href="#dgt">DGT Audition</a></li>
             <li><a href="#sponsors">Sponsors</a></li>
+            <li><a href="#family">Family</a></li>
             <li><a href="#news">News Gallery</a></li>
             <li><a href="#socials">Network</a></li>
         </ul>
@@ -467,18 +479,18 @@
             <p class="content-text">
                 Managing high-level political coordination for Party Leaders, Ministers, Chairmen, and Directors. Leading team strategy, organizational frameworks, and high-impact digital narratives with complete data integrity.
             </p>
-            <div class="grid-3" style="margin-top: 20px;">
+            <div class="grid-3">
                 <div class="grid-box">
                     <h3>Digital Strategy</h3>
-                    <p style="color: #a3a3a3; font-size: 0.9rem;">Executing targeted communication campaigns & media planning.</p>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Executing targeted communication campaigns & media planning.</p>
                 </div>
                 <div class="grid-box">
                     <h3>Leadership Liaison</h3>
-                    <p style="color: #a3a3a3; font-size: 0.9rem;">Strategic coordination with state ministers & board directors.</p>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Strategic coordination with state ministers & board directors.</p>
                 </div>
                 <div class="grid-box">
                     <h3>Media Networks</h3>
-                    <p style="color: #a3a3a3; font-size: 0.9rem;">Heading influential houses including Newsline Live & Drishti 360.</p>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Heading influential houses including Newsline Live & Drishti 360.</p>
                 </div>
             </div>
         </div>
@@ -486,7 +498,7 @@
         <!-- Abhishek Ka Safar -->
         <div id="safar" class="card">
             <h2>Abhishek Ka Safar</h2>
-            <p style="color: #a3a3a3; margin-bottom: 15px;">Political leadership & high-level public engagements:</p>
+            <p style="color: #9ca3af; margin-bottom: 20px;">Political leadership & high-level public engagements:</p>
             <div class="photo-grid">
                 <div class="photo-card">
                     <img src="cm.png" alt="CM Bhagwant Mann">
@@ -515,11 +527,11 @@
             </div>
         </div>
 
-        <!-- DGT Audition Registration (One Number - One Card Policy) -->
+        <!-- DGT Audition Registration (Strict One Number - One Card Policy) -->
         <div id="dgt" class="card">
             <h2>DGT (Dreams Growing Talent) Audition Registration</h2>
             <p class="content-text" style="margin-bottom: 20px;">
-                Apni details bharkar apna official VIP Admit Card generate karein. <br><strong>Venue:</strong> Royal Palace, Dinanagar | <strong>Date:</strong> 2 Aug 2026 (Sunday)
+                Apni details bharkar apna official VIP Corporate ID Pass generate karein. <br><strong>Venue:</strong> Royal Palace, Dinanagar | <strong>Date:</strong> 2 Aug 2026 (Sunday)
             </p>
             
             <form id="dgtForm" onsubmit="generateAdmitCard(event)">
@@ -552,33 +564,33 @@
                     <label>Upload Candidate Photo:</label>
                     <input type="file" id="regPhoto" accept="image/*" required>
                 </div>
-                <button type="submit" class="btn">Generate & View VIP Admit Card</button>
+                <button type="submit" class="btn">Generate & View VIP ID Card</button>
             </form>
 
-            <!-- STRICT PORTRAIT ADMIT CARD TARGET -->
+            <!-- CORPORATE ID CARD PASS TARGET -->
             <div id="admitCardTarget">
                 <div class="admit-watermark">DGT 2026</div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d4af37; padding-bottom: 12px; margin-bottom: 15px; position: relative; z-index: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d4af37; padding-bottom: 14px; margin-bottom: 18px; position: relative; z-index: 1;">
                     <div>
-                        <img src="logo-dgt.png" alt="DGT Logo" style="width: 48px; height: 48px; object-fit: contain;">
-                        <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-top: 4px; font-size: 1.2rem;">DGT Audition 2026</h3>
-                        <p style="font-size: 0.75rem; color: #a3a3a3; font-weight: 600;">www.abhishekgaur.co.in</p>
+                        <img src="logo-dgt.png" alt="DGT Logo" style="width: 52px; height: 52px; object-fit: contain;">
+                        <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-top: 6px; font-size: 1.25rem; font-weight: 800;">DGT AUDITION PASS</h3>
+                        <p style="font-size: 0.75rem; color: #9ca3af; font-weight: 700;">www.abhishekgaur.co.in</p>
                     </div>
                     <div style="text-align: right;">
-                        <img id="cardPhotoPreview" src="" alt="Candidate" style="width: 75px; height: 90px; object-fit: cover; border: 2px solid #d4af37; border-radius: 6px;">
+                        <img id="cardPhotoPreview" src="" alt="Candidate" style="width: 80px; height: 96px; object-fit: cover; border: 2px solid #d4af37; border-radius: 8px;">
                     </div>
                 </div>
-                <div style="font-size: 0.9rem; color: #e5e7eb; line-height: 1.7; position: relative; z-index: 1;">
-                    <p><strong>Registration ID:</strong> <span id="cardRegId" style="color: #d4af37; font-weight: 700;"></span></p>
-                    <p><strong>Candidate Name:</strong> <span id="cardName" style="color: #ffffff; font-weight: 700;"></span></p>
-                    <p><strong>Talent Category:</strong> <span id="cardCategory" style="color: #38bdf8; font-weight: 700;"></span></p>
+                <div style="font-size: 0.92rem; color: #e5e7eb; line-height: 1.7; position: relative; z-index: 1;">
+                    <p><strong>Registration ID:</strong> <span id="cardRegId" style="color: #d4af37; font-weight: 800;"></span></p>
+                    <p><strong>Candidate Name:</strong> <span id="cardName" style="color: #ffffff; font-weight: 800;"></span></p>
+                    <p><strong>Talent Category:</strong> <span id="cardCategory" style="color: #38bdf8; font-weight: 800;"></span></p>
                     <p><strong>Mobile Number:</strong> <span id="cardPhone"></span></p>
                     <p><strong>Venue:</strong> Royal Palace, Dinanagar</p>
                     <p><strong>Date & Time:</strong> 2 Aug 2026 (Sunday), 10:00 AM</p>
                 </div>
-                <div style="margin-top: 20px; text-align: center; border-top: 1px dashed #333; padding-top: 15px; position: relative; z-index: 1;">
-                    <div id="barcodeGen" style="font-family: monospace; font-size: 1.3rem; letter-spacing: 4px; font-weight: bold; color: #d4af37;">||| | |||| || | |||||</div>
-                    <p style="font-size: 0.7rem; color: #737373; margin-top: 4px;">Official VIP Pass - Dreams Growing Talent</p>
+                <div style="margin-top: 22px; text-align: center; border-top: 1px dashed #333; padding-top: 16px; position: relative; z-index: 1;">
+                    <div id="barcodeGen" style="font-family: monospace; font-size: 1.4rem; letter-spacing: 5px; font-weight: bold; color: #d4af37;">||| | |||| || | |||||</div>
+                    <p style="font-size: 0.7rem; color: #9ca3af; margin-top: 5px; font-weight: 600;">OFFICIAL CORPORATE VERIFIED PASS</p>
                 </div>
             </div>
         </div>
@@ -589,8 +601,8 @@
             <p class="content-text" style="margin-bottom: 20px;">
                 Official sponsorship ya collaboration ke liye form bharein. Submit karte hi direct WhatsApp par message chala jayega!
             </p>
-            <div style="margin-bottom: 20px; background: #050505; padding: 18px; border-radius: 10px; border: 1px solid #262626;">
-                <p style="color: #d4af37; font-weight: bold; margin-bottom: 5px;">📞 Direct Contact Support:</p>
+            <div style="margin-bottom: 20px; background: #030303; padding: 20px; border-radius: 12px; border: 1px solid #1a1a1a;">
+                <p style="color: #d4af37; font-weight: 700; margin-bottom: 6px;">📞 Direct Contact Support:</p>
                 <p style="color: #d1d5db;">WhatsApp: <strong>9103579840</strong></p>
                 <p style="color: #d1d5db;">Helpline: <strong>080542 28632</strong></p>
             </div>
@@ -611,6 +623,22 @@
             </form>
         </div>
 
+        <!-- Family Section (Restored) -->
+        <div id="family" class="card">
+            <h2>Family & Personal Moments</h2>
+            <p style="color: #9ca3af; margin-bottom: 20px;">Cherished family moments and personal milestones:</p>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <img src="paitrik family.png" alt="Paitrik Family">
+                    <p>With Son Paitrik & Family</p>
+                </div>
+                <div class="photo-card">
+                    <img src="family 1.png" alt="Family Gathering">
+                    <p>Family Gatherings & Events</p>
+                </div>
+            </div>
+        </div>
+
         <!-- News Gallery -->
         <div id="news" class="card">
             <h2>News Gallery & Press Updates</h2>
@@ -618,14 +646,14 @@
                 Official statements, media coverages, and live press releases:
             </p>
             <div class="grid-box" style="text-align: center; padding: 40px;">
-                <p style="color: #737373; font-style: italic;">(Google Sheet live news integration ready. Live updates will appear here automatically.)</p>
+                <p style="color: #666; font-style: italic;">(Google Sheet live news integration ready. Live updates will appear here automatically.)</p>
             </div>
         </div>
 
-        <!-- Social Media & Network Professional Cards -->
+        <!-- Official Network & Social Channels (Professional Hierarchy) -->
         <div id="socials" class="card">
             <h2>Official Network & Social Channels</h2>
-            <p style="color: #a3a3a3; margin-bottom: 20px;">Connect across official profiles and verified media houses:</p>
+            <p style="color: #9ca3af; margin-bottom: 20px;">Connect across official profiles and verified media houses:</p>
             
             <div class="social-grid">
                 <!-- Instagram -->
@@ -707,17 +735,17 @@
     <!-- Footer with Secret 3-Click Admin Trigger -->
     <footer onclick="checkAdminClick()">
         <p>&copy; 2026 Abhishek Gaur. All Rights Reserved | Helpline: 080542 28632</p>
-        <p style="font-size: 0.75rem; color: #525252; margin-top: 5px;">www.abhishekgaur.co.in</p>
+        <p style="font-size: 0.75rem; color: #555; margin-top: 5px;">www.abhishekgaur.co.in</p>
     </footer>
 
     <!-- Secret Admin Modal -->
     <div id="adminModal">
         <div class="admin-content">
             <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-bottom: 15px;">🔐 Admin Reset & Registrations</h3>
-            <div id="adminDataList" style="max-height: 220px; overflow-y: auto; background: #050505; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.85rem; color: #d1d5db; border: 1px solid #262626;">
+            <div id="adminDataList" style="max-height: 220px; overflow-y: auto; background: #030303; padding: 14px; border-radius: 10px; margin-bottom: 20px; font-size: 0.85rem; color: #d1d5db; border: 1px solid #1a1a1a;">
                 No registrations found yet.
             </div>
-            <div style="display:flex; gap:10px;">
+            <div style="display:flex; gap:12px;">
                 <button class="btn" onclick="clearAllData()" style="background:#ef4444; color:#fff;">Reset All Data</button>
                 <button class="btn" onclick="document.getElementById('adminModal').style.display='none'">Close Panel</button>
             </div>
@@ -765,14 +793,13 @@
 
             let regs = JSON.parse(localStorage.getItem('dgt_regs') || '{}');
 
-            // Check if mobile number already exists (One Number - One Card)
             let uniqueId, photoUrl;
             if(regs[phone]) {
                 uniqueId = regs[phone].id;
-                name = regs[phone].name;
-                category = regs[phone].category;
-                photoUrl = regs[phone].photo;
-                alert('Yeh mobile number pehle se registered hai! Aapka existing VIP Admit Card load kar diya gaya hai.');
+                document.getElementById('cardName').innerText = regs[phone].name;
+                document.getElementById('cardCategory').innerText = regs[phone].category;
+                document.getElementById('cardPhotoPreview').src = regs[phone].photo;
+                alert('Yeh mobile number pehle se registered hai! Aapka existing VIP Corporate Pass load kar diya gaya hai.');
             } else {
                 if(!photoInput.files || !photoInput.files[0]) {
                     alert('Kripya photo upload karein!');
@@ -780,7 +807,6 @@
                 }
                 uniqueId = 'DGT-2026-' + Math.floor(1000 + Math.random() * 9000);
                 
-                // Read file to base64
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     photoUrl = e.target.result;
@@ -793,8 +819,7 @@
             }
 
             if(regs[phone]) {
-                photoUrl = regs[phone].photo;
-                document.getElementById('cardPhotoPreview').src = photoUrl;
+                document.getElementById('cardPhotoPreview').src = regs[phone].photo;
             }
 
             document.getElementById('cardRegId').innerText = uniqueId;
@@ -817,7 +842,6 @@
             window.open(`https://wa.me/919103579840?text=${msg}`, '_blank');
         }
 
-        // Secret Admin 3-Click Trigger
         let clickCount = 0;
         function checkAdminClick() {
             clickCount++;
@@ -827,7 +851,7 @@
                 let regs = JSON.parse(localStorage.getItem('dgt_regs') || '{}');
                 let html = '';
                 for(let ph in regs) {
-                    html += `<b>ID:</b> ${regs[ph].id} | <b>Name:</b> ${regs[ph].name} | <b>Cat:</b> ${regs[ph].category} | <b>Phone:</b> ${ph} | <b>PIN:</b> ${regs[ph].pin}<br><hr style="border-color:#262626; margin:6px 0;">`;
+                    html += `<b>ID:</b> ${regs[ph].id} | <b>Name:</b> ${regs[ph].name} | <b>Cat:</b> ${regs[ph].category} | <b>Phone:</b> ${ph} | <b>PIN:</b> ${regs[ph].pin}<br><hr style="border-color:#222; margin:8px 0;">`;
                 }
                 document.getElementById('adminDataList').innerHTML = html || 'No candidate registrations found.';
                 document.getElementById('adminModal').style.display = 'flex';
