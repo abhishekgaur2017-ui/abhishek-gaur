@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Gaur - Official VIP Portal & DGT 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- html2canvas for direct card download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -39,7 +41,7 @@
         }
         .nav-links {
             display: flex;
-            gap: 22px;
+            gap: 20px;
             list-style: none;
             overflow-x: auto;
             padding: 5px 0;
@@ -53,9 +55,8 @@
             white-space: nowrap;
             transition: color 0.3s ease;
         }
-        .nav-links a:hover {
-            color: #d4af37;
-        }
+        .nav-links a:hover { color: #d4af37; }
+
         /* Hero Header */
         header {
             padding: 70px 20px;
@@ -92,6 +93,7 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
+
         /* Container */
         .container {
             max-width: 950px;
@@ -121,6 +123,7 @@
             color: #9ca3af;
             font-size: 1.05rem;
         }
+
         /* Grid Layouts */
         .grid-3 {
             display: grid;
@@ -140,7 +143,6 @@
             font-size: 1.1rem;
             font-weight: 700;
         }
-        /* Photo Gallery */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -167,10 +169,9 @@
             font-size: 0.95rem;
             font-weight: 600;
         }
+
         /* Forms */
-        .form-group {
-            margin-bottom: 22px;
-        }
+        .form-group { margin-bottom: 22px; }
         .form-group label {
             display: block;
             margin-bottom: 8px;
@@ -209,8 +210,75 @@
             opacity: 0.95;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
-        
-        /* Elite Social Cards */
+
+        /* EXACT VIP ID CARD DESIGN (Matching Reference Image) */
+        #admitCardTarget {
+            display: none;
+            width: 100%;
+            max-width: 480px;
+            margin: 35px auto 0 auto;
+            background: #050505;
+            color: #f3f4f6;
+            padding: 30px;
+            border-radius: 20px;
+            border: 4px solid #d4af37;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3);
+            text-align: center;
+        }
+        .id-header {
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .id-body {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: #0d0d0d;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #262626;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .id-photo {
+            width: 110px;
+            height: 135px;
+            object-fit: cover;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            background: #000;
+        }
+        .id-details {
+            font-size: 0.88rem;
+            color: #e5e7eb;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .id-details span {
+            color: #d4af37;
+            font-weight: 700;
+        }
+        .id-footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            background: #0d0d0d;
+            padding: 12px 8px;
+            border-radius: 10px;
+            border: 1px solid #262626;
+            font-size: 0.72rem;
+            text-align: center;
+        }
+        .id-footer-grid div strong {
+            color: #d4af37;
+            display: block;
+            font-size: 0.78rem;
+            margin-bottom: 2px;
+        }
+
+        /* Social Cards */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -242,9 +310,6 @@
             padding: 4px;
             border: 1px solid #262626;
         }
-        .social-info {
-            text-align: left;
-        }
         .social-info .platform {
             color: #d4af37;
             font-size: 0.72rem;
@@ -258,37 +323,8 @@
             font-size: 0.95rem;
             font-weight: 700;
         }
-        
-        /* CORPORATE ID CARD STYLE (Strict Portrait VIP Pass) */
-        #admitCardTarget {
-            display: none;
-            width: 100%;
-            max-width: 440px;
-            margin: 35px auto 0 auto;
-            background: #0a0a0a;
-            color: #f3f4f6;
-            padding: 35px;
-            border-radius: 20px;
-            border: 3px solid #d4af37;
-            position: relative;
-            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.25);
-            text-align: left;
-        }
-        .admit-watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-35deg);
-            font-family: 'Cinzel', serif;
-            font-size: 3.8rem;
-            color: rgba(212, 175, 55, 0.05);
-            font-weight: 800;
-            z-index: 0;
-            pointer-events: none;
-            white-space: nowrap;
-        }
-        
-        /* Floating WhatsApp */
+
+        /* Floating WhatsApp & Chatbot */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -308,8 +344,7 @@
             transition: transform 0.3s;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
-        
-        /* AI Chatbot Widget */
+
         .chatbot-btn {
             position: fixed;
             bottom: 25px;
@@ -394,8 +429,7 @@
             font-weight: bold;
             color: #030303;
         }
-        
-        /* Footer */
+
         footer {
             text-align: center;
             padding: 35px;
@@ -405,7 +439,6 @@
             font-size: 0.95rem;
             cursor: pointer;
         }
-        /* Admin Modal */
         #adminModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -453,13 +486,14 @@
             <li><a href="#safar">Safar</a></li>
             <li><a href="#dgt">DGT Audition</a></li>
             <li><a href="#sponsors">Sponsors</a></li>
+            <li><a href="#honours">Honours</a></li>
             <li><a href="#family">Family</a></li>
             <li><a href="#news">News Gallery</a></li>
             <li><a href="#socials">Network</a></li>
         </ul>
     </nav>
 
-    <!-- Header with Photo -->
+    <!-- Header -->
     <header>
         <div class="hero-container">
             <img src="hero.png" alt="Abhishek Gaur" class="hero-avatar">
@@ -527,11 +561,11 @@
             </div>
         </div>
 
-        <!-- DGT Audition Registration (Strict One Number - One Card Policy) -->
+        <!-- DGT Audition Registration & VIP ID Card -->
         <div id="dgt" class="card">
             <h2>DGT (Dreams Growing Talent) Audition Registration</h2>
             <p class="content-text" style="margin-bottom: 20px;">
-                Apni details bharkar apna official VIP Corporate ID Pass generate karein. <br><strong>Venue:</strong> Royal Palace, Dinanagar | <strong>Date:</strong> 2 Aug 2026 (Sunday)
+                Apni details bharkar apna official VIP ID Card generate karein. <br><strong>Venue:</strong> Royal Palace, Dinanagar | <strong>Date:</strong> 2 Aug 2026 (Sunday)
             </p>
             
             <form id="dgtForm" onsubmit="generateAdmitCard(event)">
@@ -564,34 +598,47 @@
                     <label>Upload Candidate Photo:</label>
                     <input type="file" id="regPhoto" accept="image/*" required>
                 </div>
-                <button type="submit" class="btn">Generate & View VIP ID Card</button>
+                <button type="submit" class="btn">Generate & View Official ID Card</button>
             </form>
 
-            <!-- CORPORATE ID CARD PASS TARGET -->
+            <!-- EXACT REFERENCE ID CARD TARGET -->
             <div id="admitCardTarget">
-                <div class="admit-watermark">DGT 2026</div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d4af37; padding-bottom: 14px; margin-bottom: 18px; position: relative; z-index: 1;">
+                <div class="id-header">
+                    <img src="logo-dgt.png" alt="DGT Logo" style="width: 55px; height: 55px; object-fit: contain; margin-bottom: 5px;">
+                    <h3 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 1.3rem; font-weight: 800; letter-spacing: 1px;">OFFICIAL ID CARD</h3>
+                    <p style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; letter-spacing: 0.5px;">SEASON 1 — DREAMS GROWING TALENT</p>
+                </div>
+
+                <div class="id-body">
+                    <img id="cardPhotoPreview" src="" alt="Candidate" class="id-photo">
+                    <div class="id-details">
+                        <p>👤 <strong>NAME:</strong> <span id="cardName"></span></p>
+                        <p style="margin-top: 4px;">🆔 <strong>PARTICIPANT ID:</strong> <span id="cardRegId"></span></p>
+                        <p style="margin-top: 4px;">⭐ <strong>CATEGORY:</strong> <span id="cardCategory"></span></p>
+                        <p style="margin-top: 4px;">📞 <strong>CONTACT NO.:</strong> <span id="cardPhone"></span></p>
+                    </div>
+                </div>
+
+                <div class="id-footer-grid">
                     <div>
-                        <img src="logo-dgt.png" alt="DGT Logo" style="width: 52px; height: 52px; object-fit: contain;">
-                        <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-top: 6px; font-size: 1.25rem; font-weight: 800;">DGT AUDITION PASS</h3>
-                        <p style="font-size: 0.75rem; color: #9ca3af; font-weight: 700;">www.abhishekgaur.co.in</p>
+                        <strong>PERFORMANCE DAY</strong>
+                        2 AUG 2026<br>SUNDAY
                     </div>
-                    <div style="text-align: right;">
-                        <img id="cardPhotoPreview" src="" alt="Candidate" style="width: 80px; height: 96px; object-fit: cover; border: 2px solid #d4af37; border-radius: 8px;">
+                    <div>
+                        <strong>VENUE</strong>
+                        ROYAL PALACE<br>DINANAGAR
+                    </div>
+                    <div>
+                        <strong>REPORTING TIME</strong>
+                        10:00 AM<br>SHARP
                     </div>
                 </div>
-                <div style="font-size: 0.92rem; color: #e5e7eb; line-height: 1.7; position: relative; z-index: 1;">
-                    <p><strong>Registration ID:</strong> <span id="cardRegId" style="color: #d4af37; font-weight: 800;"></span></p>
-                    <p><strong>Candidate Name:</strong> <span id="cardName" style="color: #ffffff; font-weight: 800;"></span></p>
-                    <p><strong>Talent Category:</strong> <span id="cardCategory" style="color: #38bdf8; font-weight: 800;"></span></p>
-                    <p><strong>Mobile Number:</strong> <span id="cardPhone"></span></p>
-                    <p><strong>Venue:</strong> Royal Palace, Dinanagar</p>
-                    <p><strong>Date & Time:</strong> 2 Aug 2026 (Sunday), 10:00 AM</p>
-                </div>
-                <div style="margin-top: 22px; text-align: center; border-top: 1px dashed #333; padding-top: 16px; position: relative; z-index: 1;">
-                    <div id="barcodeGen" style="font-family: monospace; font-size: 1.4rem; letter-spacing: 5px; font-weight: bold; color: #d4af37;">||| | |||| || | |||||</div>
-                    <p style="font-size: 0.7rem; color: #9ca3af; margin-top: 5px; font-weight: 600;">OFFICIAL CORPORATE VERIFIED PASS</p>
-                </div>
+                <p style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 0.8rem; font-weight: 700; margin-top: 15px; letter-spacing: 1px;">Har Talent Ko Milega Apna Stage! ★</p>
+            </div>
+
+            <!-- Direct Gallery Download Button -->
+            <div id="downloadBtnContainer" style="display: none; margin-top: 20px; text-align: center;">
+                <button type="button" class="btn" onclick="downloadIDCard()" style="background: #25d366; color: #fff;">📥 Download ID Card to Gallery</button>
             </div>
         </div>
 
@@ -623,6 +670,26 @@
             </form>
         </div>
 
+        <!-- Honours & Achievements Section (Restored) -->
+        <div id="honours" class="card">
+            <h2>Honours & Achievements</h2>
+            <p style="color: #9ca3af; margin-bottom: 20px;">State recognitions and leadership felicitations:</p>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <img src="honour 1.png" alt="Honour 1">
+                    <p>State Recognition & Award</p>
+                </div>
+                <div class="photo-card">
+                    <img src="honour 2.png" alt="Honour 2">
+                    <p>Leadership Felicitation</p>
+                </div>
+                <div class="photo-card">
+                    <img src="honour 3.png" alt="Honour 3">
+                    <p>Public Service Excellence</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Family Section (Restored) -->
         <div id="family" class="card">
             <h2>Family & Personal Moments</h2>
@@ -650,13 +717,12 @@
             </div>
         </div>
 
-        <!-- Official Network & Social Channels (Professional Hierarchy) -->
+        <!-- Official Network & Social Channels -->
         <div id="socials" class="card">
             <h2>Official Network & Social Channels</h2>
             <p style="color: #9ca3af; margin-bottom: 20px;">Connect across official profiles and verified media houses:</p>
             
             <div class="social-grid">
-                <!-- Instagram -->
                 <a href="https://www.instagram.com/drishti360company?igsh=MTltODgxZGwzMTFiYg==" target="_blank" class="social-card">
                     <img src="drishti-logo.png" alt="Drishti 360">
                     <div class="social-info"><div class="platform">Instagram</div><div class="name">Drishti 360 Company</div></div>
@@ -673,8 +739,6 @@
                     <img src="hero.png" alt="Abhishek Gaur">
                     <div class="social-info"><div class="platform">Instagram</div><div class="name">Abhishek Gaur</div></div>
                 </a>
-
-                <!-- Facebook -->
                 <a href="https://www.facebook.com/share/1FBGcwZhWL/" target="_blank" class="social-card">
                     <img src="drishti-logo.png" alt="FB Drishti">
                     <div class="social-info"><div class="platform">Facebook</div><div class="name">Drishti 360</div></div>
@@ -699,8 +763,6 @@
                     <img src="bheyaminidalogo.jpg" alt="Bheyamindia">
                     <div class="social-info"><div class="platform">Facebook</div><div class="name">Bheyamindia</div></div>
                 </a>
-
-                <!-- YouTube -->
                 <a href="https://youtube.com/@newslinelives?si=N3YQXsWipISI2-jR" target="_blank" class="social-card">
                     <img src="logo-newsline.jpg" alt="YT Newsline">
                     <div class="social-info"><div class="platform">YouTube</div><div class="name">Newsline Live</div></div>
@@ -713,8 +775,6 @@
                     <img src="hero.png" alt="Gaur Diaries">
                     <div class="social-info"><div class="platform">YouTube</div><div class="name">Gaur Diaries</div></div>
                 </a>
-
-                <!-- Others -->
                 <a href="https://www.linkedin.com/in/abhishek-gaur-a744b2157?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-card">
                     <img src="hero.png" alt="LinkedIn">
                     <div class="social-info"><div class="platform">LinkedIn</div><div class="name">Abhishek Gaur</div></div>
@@ -782,7 +842,7 @@
             }, 600);
         }
 
-        // One Number - One Card Policy & Admit Card Generator
+        // One Number - One Card Policy & ID Card Generator
         function generateAdmitCard(event) {
             event.preventDefault();
             const name = document.getElementById('regName').value;
@@ -799,13 +859,13 @@
                 document.getElementById('cardName').innerText = regs[phone].name;
                 document.getElementById('cardCategory').innerText = regs[phone].category;
                 document.getElementById('cardPhotoPreview').src = regs[phone].photo;
-                alert('Yeh mobile number pehle se registered hai! Aapka existing VIP Corporate Pass load kar diya gaya hai.');
+                alert('Yeh mobile number pehle se registered hai! Aapka existing VIP ID Card load kar diya gaya hai.');
             } else {
                 if(!photoInput.files || !photoInput.files[0]) {
                     alert('Kripya photo upload karein!');
                     return;
                 }
-                uniqueId = 'DGT-2026-' + Math.floor(1000 + Math.random() * 9000);
+                uniqueId = 'DGT-2026-' + Math.floor(100 + Math.random() * 900);
                 
                 const reader = new FileReader();
                 reader.onload = function(e) {
@@ -823,13 +883,24 @@
             }
 
             document.getElementById('cardRegId').innerText = uniqueId;
-            document.getElementById('cardName').innerText = name;
-            document.getElementById('cardCategory').innerText = category;
+            document.getElementById('cardName').innerText = name.toUpperCase();
+            document.getElementById('cardCategory').innerText = category.toUpperCase();
             document.getElementById('cardPhone').innerText = phone;
-            document.getElementById('barcodeGen').innerText = '||| ' + phone.slice(-4) + ' | ' + Math.floor(10+Math.random()*90) + ' ||';
 
             document.getElementById('admitCardTarget').style.display = 'block';
+            document.getElementById('downloadBtnContainer').style.display = 'block';
             document.getElementById('admitCardTarget').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Direct Gallery Download Function
+        function downloadIDCard() {
+            const cardElement = document.getElementById('admitCardTarget');
+            html2canvas(cardElement, { scale: 3, backgroundColor: '#050505' }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'DGT_VIP_ID_Card.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
         }
 
         function submitSponsorForm(event) {
