@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Gaur - Official VIP Portal & DGT 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- html2canvas for direct card download -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * {
@@ -604,8 +603,8 @@
             <!-- EXACT REFERENCE ID CARD TARGET -->
             <div id="admitCardTarget">
                 <div class="id-header">
-                    <img src="logo-dgt.png" alt="DGT Logo" style="width: 55px; height: 55px; object-fit: contain; margin-bottom: 5px;">
-                    <h3 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 1.3rem; font-weight: 800; letter-spacing: 1px;">OFFICIAL ID CARD</h3>
+                    <img src="logo-dgt.png" alt="DGT Logo" style="width: 65px; height: 65px; object-fit: contain; margin-bottom: 5px;">
+                    <h3 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 1.4rem; font-weight: 800; letter-spacing: 1px;">OFFICIAL ID CARD</h3>
                     <p style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; letter-spacing: 0.5px;">SEASON 1 — DREAMS GROWING TALENT</p>
                 </div>
 
@@ -670,7 +669,7 @@
             </form>
         </div>
 
-        <!-- Honours & Achievements Section (Restored) -->
+        <!-- Honours & Achievements Section -->
         <div id="honours" class="card">
             <h2>Honours & Achievements</h2>
             <p style="color: #9ca3af; margin-bottom: 20px;">State recognitions and leadership felicitations:</p>
@@ -690,7 +689,7 @@
             </div>
         </div>
 
-        <!-- Family Section (Restored) -->
+        <!-- Family Section -->
         <div id="family" class="card">
             <h2>Family & Personal Moments</h2>
             <p style="color: #9ca3af; margin-bottom: 20px;">Cherished family moments and personal milestones:</p>
@@ -895,7 +894,7 @@
         // Direct Gallery Download Function
         function downloadIDCard() {
             const cardElement = document.getElementById('admitCardTarget');
-            html2canvas(cardElement, { scale: 3, backgroundColor: '#050505' }).then(canvas => {
+            html2canvas(cardElement, { scale: 3, backgroundColor: '#050505', useCORS: true }).then(canvas => {
                 const link = document.createElement('a');
                 link.download = 'DGT_VIP_ID_Card.png';
                 link.href = canvas.toDataURL('image/png');
